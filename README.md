@@ -14,7 +14,7 @@ This library is highly geared towards `TypeScript`.
 # Installation
 
 ```
-npm i @stuyk/altv-cross-resource-cache
+npm i @stuyk/cross-resource-cache
 ```
 
 # Examples
