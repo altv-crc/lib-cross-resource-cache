@@ -1,0 +1,40 @@
+{
+    "name": "@stuyk/cross-resource-cache",
+    "version": "1.0.0",
+    "description": "add mongodb database saving to cross resource environments for altv",
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "bugs": {
+        "url": "https://github.com/stuyk/cross-resource-cache/issues"
+    },
+    "homepage": "https://github.com/stuyk/cross-resource-cache#readme",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/stuyk/cross-resource-cache.git"
+    },
+    "scripts": {
+        "build": "ts-node --esm scripts/clean.ts && tsc && tsc -m ES6 --outDir lib-es"
+    },
+    "prettier": {
+        "tabWidth": 4,
+        "semi": true,
+        "singleQuote": true,
+        "printWidth": 120
+    },
+    "engines": {
+        "node": ">=16"
+    },
+    "type": "module",
+    "devDependencies": {
+        "@altv/types-server": "^2.7.6",
+        "@altv/types-shared": "^1.4.9",
+        "@types/node": "^20.3.1",
+        "ts-node": "^10.9.1",
+        "typescript": "^5.1.3"
+    },
+    "dependencies": {
+        "@types/sjcl": "^1.0.30",
+        "mongodb": "^5.6.0",
+        "sjcl": "^1.0.8"
+    }
+}
