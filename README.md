@@ -1,10 +1,12 @@
 # Cross Resource Cache for alt:V
 
-Make a player, vehicle, or any other Entity saved to a MongoDB database with cross-resource accessible data.
+An easy-to-use database library for alt:V that utilizes MongoDB.
 
-This library is highly geared towards `TypeScript`.
+Easily write data to your database by binding documents to alt:V Entities such as players, vehicles, and colshapes.
 
-## Why?
+Data is cross-resource accessible meaning it can work in a multi-resource environment.
+
+## Features
 
 - If you've ever tried working with multiple resources in alt:V it can be painful.
 - Trying to synchronize database read / writes creates a lot of duplicate code between resources.
