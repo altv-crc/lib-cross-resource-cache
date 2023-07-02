@@ -198,20 +198,27 @@ export async function destroy(_id: string, collection: string): Promise<boolean>
  * @param {string} collection
  * @return {(Promise<T | undefined>)}
  */
-export async function get<T extends { [key: string]: any }>(
+export async function get<T extends { [key: string]: any; _id?: string | ObjectId }>(
     dataToMatch: Partial<T>,
     collection: string
 ): Promise<T | undefined> {
     const client = await getMongoClient();
 
     try {
-        const document = await client.collection(collection).findOne<T>(dataToMatch);
+        const dataLookup: any = { ...dataToMatch };
+
+        if (dataToMatch._id) {
+            dataLookup._id = new ObjectId(dataToMatch._id);
+        }
+
+        const document = await client.collection(collection).findOne<T>(dataLookup);
         if (!document) {
             return undefined;
         }
 
         return { ...document, _id: String(document._id) };
     } catch (err) {
+        console.log(err);
         return undefined;
     }
 }
@@ -232,7 +239,13 @@ export async function getMany<T extends { [key: string]: any }>(
     const client = await getMongoClient();
 
     try {
-        const cursor = await client.collection(collection).find<T>(dataToMatch);
+        const dataLookup: any = { ...dataToMatch };
+
+        if (dataToMatch._id) {
+            dataLookup._id = new ObjectId(dataToMatch._id);
+        }
+
+        const cursor = await client.collection(collection).find<T>(dataLookup);
         const documents = await cursor.toArray();
         return documents.map((x) => {
             return { ...x, _id: String(x._id) };

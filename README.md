@@ -132,3 +132,15 @@ crc.events.onKeyChange('appearance', (entity: alt.Player, newData: Appearance, o
     // Do more processing
 });
 ```
+
+## Data Synced to Client
+
+Make certain data available on client-side with ease.
+
+```ts
+crc.data.setKeysAsLocal(['cash', 'bank'])
+
+crc.data.setKeysAsStreamSynced(['object-attachments']);
+
+crc.data.setKeysAsSynced(['name'])
+```
