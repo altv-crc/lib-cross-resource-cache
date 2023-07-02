@@ -8,10 +8,11 @@ Data is cross-resource accessible meaning it can work in a multi-resource enviro
 
 ## Features
 
-- If you've ever tried working with multiple resources in alt:V it can be painful.
-- Trying to synchronize database read / writes creates a lot of duplicate code between resources.
-- The aim of this library is to reduce that complexity by making it all viable through setters/getters.
-- This is an experimental project to see if we can make alt:V cross resource viable.
+- Connect to MongoDB Database
+- Individual connections to MongoDB Database per resource
+- Cross-resource data cache for alt:V Entities (players, vehicles, etc)
+- Listen for individual data updates based on keys
+- Flag different data keys as localMeta, syncedMeta, or streamSyncedMeta for easy server-to-client sync
 
 # Installation
 
