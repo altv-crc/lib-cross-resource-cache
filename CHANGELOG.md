@@ -1,3 +1,7 @@
+# 1.0.4
+
+- Added deleteDocument function
+
 # 1.0.3
 
 - Simplify `onSync` logic to just pass any entity.

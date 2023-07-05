@@ -1,6 +1,6 @@
 {
     "name": "@stuyk/cross-resource-cache",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "add mongodb database saving to cross resource environments for altv",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",

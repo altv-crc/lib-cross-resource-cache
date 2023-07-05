@@ -280,3 +280,24 @@ export async function getAll<T extends { _id: ObjectId }>(
         return undefined;
     }
 }
+
+/**
+ * Deletes a single document by `_id`
+ *
+ * If the document was deleted it will return `true`.
+ *
+ * @export
+ * @param {string} _id
+ * @param {string} collection
+ * @return {Promise<boolean>}
+ */
+export async function deleteDocument(_id: string, collection: string): Promise<boolean> {
+    const client = await getMongoClient();
+
+    try {
+        const result = await client.collection(collection).deleteOne({ _id: new ObjectId(_id) });
+        return result.acknowledged;
+    } catch (err) {
+        return false;
+    }
+}
