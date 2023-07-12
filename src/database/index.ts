@@ -157,7 +157,7 @@ export async function update<T extends { [key: string]: any }>(data: T, collecti
     try {
         const result = await client
             .collection(collection)
-            .findOneAndUpdate({ _id: new ObjectId(data._id) }, { $set: data });
+            .findOneAndUpdate({ _id: new ObjectId(data._id) }, { $set: dataClone });
         return result.ok ? true : false;
     } catch (err) {
         return false;

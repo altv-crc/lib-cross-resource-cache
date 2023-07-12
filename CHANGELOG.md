@@ -1,3 +1,7 @@
+# 1.0.5
+
+- Fix small bug with `_id` in update function
+
 # 1.0.4
 
 - Added deleteDocument function
