@@ -1,3 +1,7 @@
+# 1.0.6
+
+- Fix small bug where `sync` did not set `collection` for proper updating.
+
 # 1.0.5
 
 - Fix small bug with `_id` in update function

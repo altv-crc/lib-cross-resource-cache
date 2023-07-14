@@ -251,6 +251,7 @@ export async function sync(entity: alt.Entity, _id: string, collection: string) 
 
     try {
         dataSet = await db.collection(collection).findOne({ _id: new ObjectId(_id) });
+        entity.setMeta('collection', collection);
     } catch (err) {
         console.error(`Could not find document for ${_id} in collection ${collection}`);
         return false;
