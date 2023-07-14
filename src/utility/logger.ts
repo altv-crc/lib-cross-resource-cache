@@ -2,19 +2,17 @@ import * as fs from 'fs';
 
 let enabled = true;
 
-function getTimeAsString() {
-    const time = new Date(Date.now());
-    const timeframe = [time.getHours(), time.getMinutes(), time.getSeconds()];
-
-    let data = [];
-
-    for (let value of timeframe) {
-        data.push(value <= 9 ? `0${value}` : `${value}`);
-        data.push(':');
+function toPadded(value: number) {
+    if (value <= 9) {
+        return `0${value}`;
     }
 
-    data.pop();
-    return data.join();
+    return `${value}`;
+}
+
+function getTimeAsString() {
+    const time = new Date(Date.now());
+    return `${toPadded(time.getHours())}:${toPadded(time.getMinutes())}:${toPadded(time.getSeconds())}`;
 }
 
 export function write(message: string) {

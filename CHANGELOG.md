@@ -1,3 +1,7 @@
+# 1.0.7
+
+- Fix logger timestamps
+
 # 1.0.6
 
 - Fix small bug where `sync` did not set `collection` for proper updating.
