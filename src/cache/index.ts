@@ -30,14 +30,6 @@ async function writeToDatabase(entity: alt.Entity, data: { [key: string]: any })
     const collection = <string>entity.getMeta('collection');
 
     const db = await Database.getMongoClient();
-    const existingCollections = await db.listCollections().toArray();
-    if (!existingCollections.findIndex((x) => x.name === collection)) {
-        try {
-            await db.createCollection(collection);
-        } catch (err) {
-            console.error(`Could not create collection: ${collection}`);
-        }
-    }
 
     try {
         const filter = { _id: new ObjectId(_id) };

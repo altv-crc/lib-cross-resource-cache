@@ -1,3 +1,7 @@
+# 1.0.8
+
+- Remove annoying database log
+
 # 1.0.7
 
 - Fix logger timestamps
